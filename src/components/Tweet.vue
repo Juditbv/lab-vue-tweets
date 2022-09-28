@@ -1,27 +1,28 @@
-<template>
-	<div className="tweet">
-		<img
-			src="https://i.imgur.com/9yw1Fyw.jpg"
-			className="profile"
-			alt="profile"
-		/>
+<script setup>
+	const props = defineProps({
+		tweet: Object,
+	});
+</script>
 
-		<div className="body">
-			<div className="top">
-				<span className="user">
-					<span className="name">Ironhack</span>
-					<span className="handle">@ironhack</span>
+<template>
+	<div class="tweet">
+		<img :src="props.tweet.user.image" class="profile" alt="profile" />
+
+		<div class="body">
+			<div class="top">
+				<span class="user">
+					<span class="name">{{ props.tweet.user.name }}</span>
+					<span class="handle">{{ props.tweet.user.handle }}</span>
 				</span>
 
-				<span className="timestamp">Nov 30, 2020</span>
+				<span class="timestamp">{{ props.tweet.timestamp }}</span>
 			</div>
 
-			<p className="message">
-				On December 7th, we will be hosting a #webinar that will introduce you
-				to #SQL! Are you ready? 🚀
+			<p class="message">
+				{{ props.tweet.message }}
 			</p>
 
-			<div className="actions">
+			<div class="actions">
 				<!-- Font Awesome icons -->
 				<i class="far fa-comment"></i>
 				<i class="fas fa-retweet"></i>

@@ -1,12 +1,15 @@
 <script setup>
 	import Tweet from "./components/Tweet.vue";
 
-	const tweets = [
+	import { ref } from "vue";
+
+	const tweets = ref([
 		{
 			user: {
 				name: "Thoughts of Dog®",
-				image: "https://i.imgur.com/b0EdHVV.jpg",
-				handle: "dog_feelings",
+				image:
+					"https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg",
+				handle: "@dog_feelings",
 			},
 			timestamp: "1h ago",
 			message:
@@ -16,7 +19,7 @@
 			user: {
 				name: "Thoughts of Dog®",
 				image: "https://i.imgur.com/b0EdHVV.jpg",
-				handle: "dog_feelings",
+				handle: "@dog_feelings",
 			},
 			timestamp: "2h ago",
 			message:
@@ -26,18 +29,22 @@
 			user: {
 				name: "Thoughts of Dog®",
 				image: "https://i.imgur.com/b0EdHVV.jpg",
-				handle: "dog_feelings",
+				handle: "@dog_feelings",
 			},
 			timestamp: "3h ago",
 			message:
 				"here is what. i plan to accomplish today: \n\n2. bark loudly. but at nothing \n7. lose my ball under the couch\n7b. politely ask the human. to get my ball\n3. immediately lose it again. under the same couch\n4. big nap. you have worked hard\n2. repeat",
 		},
-	];
+	]);
+
+	const props = defineProps({
+		tweet: Object,
+	});
 </script>
 
 <template>
 	<div class="app">
-		<Tweet />
+		<Tweet :tweet="tweets[0]" />
 	</div>
 </template>
 
