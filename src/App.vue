@@ -39,7 +39,7 @@
 
 <template>
 	<div class="app">
-		<Tweet v-for="tweet in tweetsArr" :key="tweet" :tweetContent="tweet" />
+		<Tweet v-for="tweet in tweetsArr" :key="tweet" :tweet-content="tweet" />
 	</div>
 </template>
 

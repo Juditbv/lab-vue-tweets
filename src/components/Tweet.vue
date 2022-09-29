@@ -15,7 +15,7 @@
 
 		<div class="body">
 			<div class="top">
-				<User :userData="props.tweetContent.user" />
+				<User :user-data="props.tweetContent.user" />
 
 				<Timestamp :time="props.tweetContent.timestamp" />
 			</div>
