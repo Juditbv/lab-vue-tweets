@@ -3,7 +3,7 @@
 
 	import { ref } from "vue";
 
-	const tweets = ref([
+	const tweetsArr = ref([
 		{
 			user: {
 				name: "Thoughts of Dog®",
@@ -35,15 +35,11 @@
 				"here is what. i plan to accomplish today: \n\n2. bark loudly. but at nothing \n7. lose my ball under the couch\n7b. politely ask the human. to get my ball\n3. immediately lose it again. under the same couch\n4. big nap. you have worked hard\n2. repeat",
 		},
 	]);
-
-	const props = defineProps({
-		tweet: Object,
-	});
 </script>
 
 <template>
 	<div class="app">
-		<Tweet v-for="tweet in tweets" :key="tweet" />
+		<Tweet v-for="tweet in tweetsArr" :key="tweet" :tweetContent="tweet" />
 	</div>
 </template>
 
