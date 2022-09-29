@@ -1,4 +1,5 @@
 <script setup>
+	import ProfileImage from "./ProfileImage.vue";
 	const props = defineProps({
 		tweet: Object,
 	});
@@ -6,7 +7,7 @@
 
 <template>
 	<div class="tweet">
-		<img :src="props.tweet.user.image" class="profile" alt="profile" />
+		<ProfileImage :image="user.image" />
 
 		<div class="body">
 			<div class="top">
