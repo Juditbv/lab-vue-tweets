@@ -1,14 +1,14 @@
 <script setup>
 	const props = defineProps({
-		image: String,
+		imageDog: String,
 	});
 </script>
 
 <template>
 	<img
-		referrerpolicy="no-referrer"
-		:src="props.image"
+		:src="props.imageDog"
 		class="profile"
 		alt="profile"
+		referrerpolicy="no-referrer"
 	/>
 </template>

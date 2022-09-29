@@ -3,7 +3,7 @@
 
 	import { ref } from "vue";
 
-	const tweetsArr = ref([
+	const tweets = ref([
 		{
 			user: {
 				name: "Thoughts of Dog®",
@@ -39,7 +39,14 @@
 
 <template>
 	<div class="app">
-		<Tweet v-for="tweet in tweetsArr" :key="tweet" :tweet-content="tweet" />
+		<Tweet
+			v-for="tweet in tweets"
+			:key="tweet"
+			:message="tweet.message"
+			:timestamp="tweet.timestamp"
+			:user="tweet.user"
+			:image="tweet.user.image"
+		/>
 	</div>
 </template>
 
