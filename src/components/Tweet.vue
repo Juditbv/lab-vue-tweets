@@ -1,6 +1,9 @@
 <script setup>
 	import ProfileImage from "./ProfileImage.vue";
 	import User from "./User.vue";
+	import Timestamp from "./Timestamp.vue";
+	import Message from "./Message.vue";
+	import Actions from "./Actions.vue";
 	const props = defineProps({
 		tweet: Object,
 	});
@@ -14,23 +17,13 @@
 			<div class="top">
 				<User :userData="props.tweet.user" />
 
-				<span class="timestamp">{{ props.tweet.timestamp }}</span>
+				<Timestamp :time="props.tweet.timestamp" />
 			</div>
 
-			<p class="message">
-				{{ props.tweet.message }}
-			</p>
+			<Message :message="props.tweet.message" />
 
-			<div class="actions">
-				<!-- Font Awesome icons -->
-				<i class="far fa-comment"></i>
-				<i class="fas fa-retweet"></i>
-				<i class="far fa-heart"></i>
-				<i class="fas fa-share"></i>
-			</div>
+			<Actions />
 		</div>
-
-		<i class="fas fa-ellipsis-h"></i>
 	</div>
 </template>
 

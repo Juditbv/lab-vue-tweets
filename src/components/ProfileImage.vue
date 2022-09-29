@@ -7,12 +7,8 @@
 <template>
 	<img
 		referrerpolicy="no-referrer"
-		:src="image"
+		:src="props.image"
 		class="profile"
 		alt="profile"
 	/>
 </template>
-
-
-<style scoped>
-</style>
