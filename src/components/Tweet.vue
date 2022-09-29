@@ -1,5 +1,6 @@
 <script setup>
 	import ProfileImage from "./ProfileImage.vue";
+	import User from "./User.vue";
 	const props = defineProps({
 		tweet: Object,
 	});
@@ -7,14 +8,11 @@
 
 <template>
 	<div class="tweet">
-		<ProfileImage :image="user.image" />
+		<ProfileImage :image="props.tweet.user.image" />
 
 		<div class="body">
 			<div class="top">
-				<span class="user">
-					<span class="name">{{ props.tweet.user.name }}</span>
-					<span class="handle">{{ props.tweet.user.handle }}</span>
-				</span>
+				<User :userData="props.tweet.user" />
 
 				<span class="timestamp">{{ props.tweet.timestamp }}</span>
 			</div>

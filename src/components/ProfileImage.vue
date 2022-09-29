@@ -7,12 +7,12 @@
 <template>
 	<img
 		referrerpolicy="no-referrer"
-		:src="props.tweet.user.image"
+		:src="image"
 		class="profile"
 		alt="profile"
 	/>
 </template>
 
 
-<style lang="scss" scoped>
+<style scoped>
 </style>
